@@ -12,7 +12,7 @@ public class Elf {
         this.factory = factory;
     }
 
-    public boolean pickToy(String toyName) throws NoSuchToyException {
+    public boolean pickToy(String toyName) {
         if (toy != null) {
             System.out.println("Minute please?! I'm not that fast.");
         }
