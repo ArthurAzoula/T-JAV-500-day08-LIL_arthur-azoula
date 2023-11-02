@@ -1,12 +1,9 @@
 package Observer;
 
-public class Observable {
+public interface Observable {
 
-    public void addObserver(Observer observer) {
+    public void addObserver(Observer observer);
 
-    }
+    public boolean notifyObservers();
 
-    public boolean notifyObservers() {
-        return false;
-    }
 }

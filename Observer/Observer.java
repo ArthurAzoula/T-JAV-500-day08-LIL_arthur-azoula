@@ -1,4 +1,6 @@
 package Observer;
 
-public class Observer {
+public interface Observer {
+    public void update(Observable observable);
+
 }
