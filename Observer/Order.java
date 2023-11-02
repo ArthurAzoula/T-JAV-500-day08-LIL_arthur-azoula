@@ -1,5 +1,6 @@
 package Observer;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Order implements Observable {
@@ -10,7 +11,7 @@ public class Order implements Observable {
 
     private int timeBeforeArrival;
 
-    private List<Observer> observers;
+    private List<Observer> observers = new ArrayList<>();
 
     public String getPosition() {
         return this.position;
@@ -28,6 +29,7 @@ public class Order implements Observable {
         this.position = position;
         this.destination = destination;
         this.timeBeforeArrival = timeBeforeArrival;
+        notifyObservers();
     }
 
     @Override
