@@ -1,4 +1,4 @@
 package Factory;
 
-public class Gameboy {
+public class Gameboy extends Toy {
 }

@@ -1,4 +1,5 @@
 package Factory;
 
-public class TeddyBear {
+public class TeddyBear extends Toy {
+
 }

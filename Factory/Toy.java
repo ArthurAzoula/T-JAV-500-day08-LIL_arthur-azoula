@@ -1,4 +1,13 @@
 package Factory;
 
-public class Toy {
+public abstract class Toy {
+
+    private String title;
+
+    public String getTitle() {
+        return title;
+    }
+
+
+
 }
