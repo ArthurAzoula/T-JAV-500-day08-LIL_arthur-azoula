@@ -6,7 +6,7 @@ public class Elf {
 
     private Toy toy;
     private List<GiftPaper> papers;
-    private final Factory factory;
+    private Factory factory;
 
     public Elf(Factory factory) {
         this.factory = factory;
