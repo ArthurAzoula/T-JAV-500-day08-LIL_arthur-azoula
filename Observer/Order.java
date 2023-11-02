@@ -38,14 +38,16 @@ public class Order implements Observable {
     @Override
     public boolean notifyObservers() {
         if (observers.isEmpty()) {
-            return false;
+            return false; // No observers to notify
         }
+        boolean allObserversNotified = true;
         for (Observer observer : observers) {
-            if (observer == null) {
-                return false;
+            if (observer != null) {
+                observer.update(this);
+            } else {
+                allObserversNotified = false;
             }
-            observer.update(this);
         }
-        return true;
+        return allObserversNotified;
     }
 }

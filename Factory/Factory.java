@@ -10,7 +10,7 @@ public class Factory {
         } else if (toyName.equals("gameboy")) {
             return new Gameboy();
         } else {
-            throw new NoSuchToyException("No such toy: " + toyName + "..");
+            throw new NoSuchToyException("No such toy: " + toyName + ".");
         }
     }
 
