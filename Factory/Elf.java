@@ -4,9 +4,9 @@ import java.util.List;
 
 public class Elf {
 
+    private final Factory factory;
     private Toy toy;
     private List<GiftPaper> papers;
-    private final Factory factory;
 
     public Elf(Factory factory) {
         this.factory = factory;
@@ -34,27 +34,23 @@ public class Elf {
     }
 
     public GiftPaper pack() {
-        if (this.toy == null) {
-            if (this.papers == null || this.papers.isEmpty()) {
-                System.out.println("Wait... I can't pack it with my shirt.");
-                return null;
-            } else {
-                System.out.println("I don't have any toy, but hey at least it's paper!");
-            }
-        } else {
-            if (this.papers == null || this.papers.isEmpty()) {
-                System.out.println("Wait... I can't pack it with my shirt.");
-                return null;
-            }
-
-            GiftPaper paper = this.papers.get(0);
-            paper.wrap(this.toy);
-            this.toy = null;
-
-            System.out.println("And another kid will be happy!");
-            return paper;
+        if (papers == null || papers.isEmpty()) {
+            System.out.println("Wait... I can't pack it with my shirt.");
+            return null;
         }
-        return null;
+
+        if (toy == null) {
+            System.out.println("I don't have any toy, but I've some paper!");
+            return null;
+        }
+
+        GiftPaper paper = this.papers.get(0);
+        paper.wrap(this.toy);
+        this.toy = null;
+
+        System.out.println("And another kid will be happy!");
+        return paper;
+
     }
 
 }
