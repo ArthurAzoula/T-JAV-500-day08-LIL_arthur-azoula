@@ -45,7 +45,12 @@ public class Elf {
         }
 
         GiftPaper paper = this.papers.get(0);
+        if (paper == null) {
+            System.out.println("Wait... I can't pack it with my shirt.");
+            return null;
+        }
         paper.wrap(this.toy);
+        this.papers.remove(0);
         this.toy = null;
 
         System.out.println("And another kid will be happy!");
