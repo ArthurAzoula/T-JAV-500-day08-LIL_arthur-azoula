@@ -34,28 +34,24 @@ public class Elf {
     }
 
     public GiftPaper pack() {
-        if (papers == null || papers.isEmpty()) {
+        if (papers == null) {
+            return null;
+        }
+
+        if (papers.isEmpty()) {
             System.out.println("Wait... I can't pack it with my shirt.");
             return null;
         }
 
+        GiftPaper paper = papers.remove(0);
         if (toy == null) {
-            System.out.println("I don't have any toy, but I've some paper!");
-            return null;
+            System.out.println("I don't have any toy, but hey at least it's paper!");
+        } else {
+            System.out.println("And another kid will be happy!");
+            paper.wrap(toy);
         }
-
-        GiftPaper paper = this.papers.get(0);
-        if (paper == null) {
-            System.out.println("Wait... I can't pack it with my shirt.");
-            return null;
-        }
-        paper.wrap(this.toy);
-        this.papers.remove(0);
-        this.toy = null;
-
-        System.out.println("And another kid will be happy!");
+        toy = null;
         return paper;
-
     }
 
 }
